@@ -56,7 +56,7 @@ func cecInit(deviceName string) (C.libcec_connection_t, error) {
 
 	conf.clientVersion = C.uint32_t(C.LIBCEC_VERSION_CURRENT)
 
-	conf.deviceTypes.types[0] = C.CEC_DEVICE_TYPE_RECORDING_DEVICE
+	conf.deviceTypes.types[0] = C.CEC_DEVICE_TYPE_PLAYBACK_DEVICE
 
 	C.setName(&conf, C.CString(deviceName))
 	C.setupCallbacks(&conf)
